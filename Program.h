@@ -1,7 +1,11 @@
 #pragma once
+#include "Enums/UserTypes/UserTypes.h"
+#include <string>
 class Program
 {
+private:
+	UserTypes StringToEnum(std::string input);
 public:
-	int Run();
+	void Run();
 };
 

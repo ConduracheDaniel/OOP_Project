@@ -7,7 +7,7 @@ class Employee
 	string name;
 	int age;
 	int salary;
-	string ID;
+	string ID; //unicitate cu static
 public:
 	// Constructor
 	Employee(string name, int age, int salary, string ID);

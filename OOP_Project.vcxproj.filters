@@ -51,6 +51,15 @@
     <ClCompile Include="Customer\Customer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Interfaces\Commands\ICommands.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Enums\UserTypes\UserTypes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="String functions\Strings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Program.h">
@@ -83,7 +92,13 @@
     <ClInclude Include="Recipe\Recipe.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CoffeeTypes\Customer.h">
+    <ClInclude Include="Customer\Customer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Interfaces\Commands\ICommands.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Enums\UserTypes\UserTypes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

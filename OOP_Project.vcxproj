@@ -125,6 +125,7 @@
   <ItemGroup>
     <ClCompile Include="CoffeeTypes\CoffeeTypes.cpp" />
     <ClCompile Include="Customer\Customer.cpp" />
+    <ClCompile Include="Interfaces\Commands\ICommands.cpp" />
     <ClCompile Include="OrderItems\OrderItems.cpp" />
     <ClCompile Include="Payment\Card\Card.cpp" />
     <ClCompile Include="Employee\Employee.cpp" />
@@ -135,10 +136,13 @@
     <ClCompile Include="Shop\Shop.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Stock\Stock.cpp" />
+    <ClCompile Include="Enums\UserTypes\UserTypes.cpp" />
+    <ClCompile Include="String functions\Strings.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CoffeeTypes\CoffeeTypes.h" />
-    <ClInclude Include="CoffeeTypes\Customer.h" />
+    <ClInclude Include="Customer\Customer.h" />
+    <ClInclude Include="Interfaces\Commands\ICommands.h" />
     <ClInclude Include="OrderItems\OrderItems.h" />
     <ClInclude Include="Payment\Card\Card.h" />
     <ClInclude Include="Employee\Employee.h" />
@@ -148,6 +152,7 @@
     <ClInclude Include="Recipe\Recipe.h" />
     <ClInclude Include="Shop\Shop.h" />
     <ClInclude Include="Stock\Stock.h" />
+    <ClInclude Include="Enums\UserTypes\UserTypes.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
