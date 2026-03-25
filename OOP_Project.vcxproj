@@ -125,7 +125,10 @@
   <ItemGroup>
     <ClCompile Include="CoffeeTypes\CoffeeTypes.cpp" />
     <ClCompile Include="Customer\Customer.cpp" />
-    <ClCompile Include="Interfaces\Commands\ICommands.cpp" />
+    <ClCompile Include="Commands\HelpCommand\HelpCommand.cpp" />
+    <ClCompile Include="Interfaces\IMenuItem\IMenuItem.cpp" />
+    <ClCompile Include="Interfaces\ICommand\ICommand.cpp" />
+    <ClCompile Include="Item\Item.cpp" />
     <ClCompile Include="OrderItems\OrderItems.cpp" />
     <ClCompile Include="Payment\Card\Card.cpp" />
     <ClCompile Include="Employee\Employee.cpp" />
@@ -138,11 +141,15 @@
     <ClCompile Include="Stock\Stock.cpp" />
     <ClCompile Include="Enums\UserTypes\UserTypes.cpp" />
     <ClCompile Include="String functions\Strings.cpp" />
+    <ClCompile Include="User\User.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CoffeeTypes\CoffeeTypes.h" />
     <ClInclude Include="Customer\Customer.h" />
-    <ClInclude Include="Interfaces\Commands\ICommands.h" />
+    <ClInclude Include="Commands\HelpCommand\HelpCommand.h" />
+    <ClInclude Include="Interfaces\IMenuItem\IMenuItem.h" />
+    <ClInclude Include="Interfaces\ICommand\ICommand.h" />
+    <ClInclude Include="Item\Item.h" />
     <ClInclude Include="OrderItems\OrderItems.h" />
     <ClInclude Include="Payment\Card\Card.h" />
     <ClInclude Include="Employee\Employee.h" />
@@ -153,6 +160,7 @@
     <ClInclude Include="Shop\Shop.h" />
     <ClInclude Include="Stock\Stock.h" />
     <ClInclude Include="Enums\UserTypes\UserTypes.h" />
+    <ClInclude Include="User\User.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

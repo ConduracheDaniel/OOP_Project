@@ -51,13 +51,25 @@
     <ClCompile Include="Customer\Customer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Interfaces\Commands\ICommands.cpp">
+    <ClCompile Include="Interfaces\ICommand\ICommand.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Enums\UserTypes\UserTypes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="String functions\Strings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="User\User.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Interfaces\IMenuItem\IMenuItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Item\Item.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\HelpCommand\HelpCommand.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -95,10 +107,22 @@
     <ClInclude Include="Customer\Customer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Interfaces\Commands\ICommands.h">
+    <ClInclude Include="Interfaces\ICommand\ICommand.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Enums\UserTypes\UserTypes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="User\User.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Interfaces\IMenuItem\IMenuItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Item\Item.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\HelpCommand\HelpCommand.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -5,7 +5,8 @@ class Program
 {
 private:
 	UserTypes StringToEnum(std::string input);
+
 public:
-	void Run();
+	void Start();
 };
 

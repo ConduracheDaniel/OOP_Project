@@ -2,6 +2,6 @@
 
 int main() {
 	Program program;
-	program.Run();
+	program.Start();
 	return 0;
 }
