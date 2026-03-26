@@ -13,11 +13,28 @@ UserTypes Program::StringToEnum(string input)
 }
 void Program::Start()
 {
+	UserTypes type;
 	string input;
+	bool validInput = false;
+
 	cout << "Ai pornit aplicatia!\n";
-	cout << "Introdu tipul utilizatorului: \n1. Admin\n2. User\n";
-	cin >> input;
-	UserTypes type = StringToEnum(input);
+
+	while (!validInput) {
+		cout << "\nIntrodu tipul utilizatorului: \n1. Admin\n2. User\n";
+		cin >> input;
+		type = StringToEnum(input);
+
+		switch (type) {
+		case UserTypes::ADMIN:
+		case UserTypes::USER:
+			validInput = true;
+			break;
+		default:
+			cout << "\nOptiune utilizator invalida!\n";
+			break;
+		}
+	}
+
 	User user("@@@", type);
 
 }

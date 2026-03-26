@@ -18,37 +18,37 @@
     <ClCompile Include="Program.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Shop\Shop.cpp">
+    <ClCompile Include="DTOs\Shop\Shop.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Employee\Employee.cpp">
+    <ClCompile Include="DTOs\Employee\Employee.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Order\Order.cpp">
+    <ClCompile Include="DTOs\Order\Order.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Payment\PaymentBase.cpp">
+    <ClCompile Include="DTOs\Payment\PaymentBase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Payment\Card\Card.cpp">
+    <ClCompile Include="DTOs\Payment\Card\Card.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Stock\Stock.cpp">
+    <ClCompile Include="DTOs\Stock\Stock.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="OrderItems\OrderItems.cpp">
+    <ClCompile Include="DTOs\OrderItems\OrderItems.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CoffeeTypes\CoffeeTypes.cpp">
+    <ClCompile Include="DTOs\CoffeeTypes\CoffeeTypes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Recipe\Recipe.cpp">
+    <ClCompile Include="DTOs\Recipe\Recipe.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Customer\Customer.cpp">
+    <ClCompile Include="DTOs\Customer\Customer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Interfaces\ICommand\ICommand.cpp">
@@ -77,34 +77,34 @@
     <ClInclude Include="Program.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Shop\Shop.h">
+    <ClInclude Include="DTOs\Shop\Shop.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Employee\Employee.h">
+    <ClInclude Include="DTOs\Employee\Employee.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Order\Order.h">
+    <ClInclude Include="DTOs\Order\Order.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Payment\PaymentBase.h">
+    <ClInclude Include="DTOs\Payment\PaymentBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Payment\Card\Card.h">
+    <ClInclude Include="DTOs\Payment\Card\Card.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Stock\Stock.h">
+    <ClInclude Include="DTOs\Stock\Stock.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="OrderItems\OrderItems.h">
+    <ClInclude Include="DTOs\OrderItems\OrderItems.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CoffeeTypes\CoffeeTypes.h">
+    <ClInclude Include="DTOs\CoffeeTypes\CoffeeTypes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Recipe\Recipe.h">
+    <ClInclude Include="DTOs\Recipe\Recipe.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Customer\Customer.h">
+    <ClInclude Include="DTOs\Customer\Customer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Interfaces\ICommand\ICommand.h">

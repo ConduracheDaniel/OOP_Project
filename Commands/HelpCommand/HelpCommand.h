@@ -6,11 +6,14 @@
 class HelpCommand : public ICommand{
 private:
     std::string _name = "help";
+    std::string _description = "Displays help inforamtion.";
 public:
     std::string GetName() const override { return _name; }
     void SetName(const std::string& name) override { _name = name; }
 
-    void Execute(User& user, Item& item);
+    std::string GetDescription() { return _description; }
+    void SetDescription(const std::string& description)override { _description = description; }
+
+    void Execute(User user, IMenuItem& item) override;
 
 };
-
