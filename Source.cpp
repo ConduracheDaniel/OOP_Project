@@ -2,6 +2,7 @@
 
 int main() {
 	Program program;
-	program.Start();
+	Order order;
+	program.Start(order);
 	return 0;
 }

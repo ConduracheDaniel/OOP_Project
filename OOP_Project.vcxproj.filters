@@ -18,49 +18,13 @@
     <ClCompile Include="Program.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DTOs\Shop\Shop.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Source.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DTOs\Employee\Employee.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DTOs\Order\Order.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DTOs\Payment\PaymentBase.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DTOs\Payment\Card\Card.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DTOs\Stock\Stock.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DTOs\OrderItems\OrderItems.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DTOs\CoffeeTypes\CoffeeTypes.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DTOs\Recipe\Recipe.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DTOs\Customer\Customer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Interfaces\ICommand\ICommand.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Enums\UserTypes\UserTypes.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="String functions\Strings.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="User\User.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Interfaces\IMenuItem\IMenuItem.cpp">
@@ -72,48 +36,15 @@
     <ClCompile Include="Commands\HelpCommand\HelpCommand.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Order\Order.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Program.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DTOs\Shop\Shop.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DTOs\Employee\Employee.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DTOs\Order\Order.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DTOs\Payment\PaymentBase.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DTOs\Payment\Card\Card.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DTOs\Stock\Stock.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DTOs\OrderItems\OrderItems.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DTOs\CoffeeTypes\CoffeeTypes.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DTOs\Recipe\Recipe.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DTOs\Customer\Customer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Interfaces\ICommand\ICommand.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Enums\UserTypes\UserTypes.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="User\User.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Interfaces\IMenuItem\IMenuItem.h">
@@ -123,6 +54,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Commands\HelpCommand\HelpCommand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Order\Order.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

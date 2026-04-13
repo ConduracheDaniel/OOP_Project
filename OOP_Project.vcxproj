@@ -123,44 +123,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DTOs\CoffeeTypes\CoffeeTypes.cpp" />
-    <ClCompile Include="DTOs\Customer\Customer.cpp" />
     <ClCompile Include="Commands\HelpCommand\HelpCommand.cpp" />
     <ClCompile Include="Interfaces\IMenuItem\IMenuItem.cpp" />
     <ClCompile Include="Interfaces\ICommand\ICommand.cpp" />
     <ClCompile Include="Item\Item.cpp" />
-    <ClCompile Include="DTOs\OrderItems\OrderItems.cpp" />
-    <ClCompile Include="DTOs\Payment\Card\Card.cpp" />
-    <ClCompile Include="DTOs\Employee\Employee.cpp" />
-    <ClCompile Include="DTOs\Order\Order.cpp" />
-    <ClCompile Include="DTOs\Payment\PaymentBase.cpp" />
+    <ClCompile Include="Order\Order.cpp" />
     <ClCompile Include="Program.cpp" />
-    <ClCompile Include="DTOs\Recipe\Recipe.cpp" />
-    <ClCompile Include="DTOs\Shop\Shop.cpp" />
     <ClCompile Include="Source.cpp" />
-    <ClCompile Include="DTOs\Stock\Stock.cpp" />
-    <ClCompile Include="Enums\UserTypes\UserTypes.cpp" />
     <ClCompile Include="String functions\Strings.cpp" />
-    <ClCompile Include="User\User.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DTOs\CoffeeTypes\CoffeeTypes.h" />
-    <ClInclude Include="DTOs\Customer\Customer.h" />
     <ClInclude Include="Commands\HelpCommand\HelpCommand.h" />
     <ClInclude Include="Interfaces\IMenuItem\IMenuItem.h" />
     <ClInclude Include="Interfaces\ICommand\ICommand.h" />
     <ClInclude Include="Item\Item.h" />
-    <ClInclude Include="DTOs\OrderItems\OrderItems.h" />
-    <ClInclude Include="DTOs\Payment\Card\Card.h" />
-    <ClInclude Include="DTOs\Employee\Employee.h" />
-    <ClInclude Include="DTOs\Order\Order.h" />
-    <ClInclude Include="DTOs\Payment\PaymentBase.h" />
+    <ClInclude Include="Order\Order.h" />
     <ClInclude Include="Program.h" />
-    <ClInclude Include="DTOs\Recipe\Recipe.h" />
-    <ClInclude Include="DTOs\Shop\Shop.h" />
-    <ClInclude Include="DTOs\Stock\Stock.h" />
-    <ClInclude Include="Enums\UserTypes\UserTypes.h" />
-    <ClInclude Include="User\User.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

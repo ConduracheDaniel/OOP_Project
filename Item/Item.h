@@ -1,17 +1,28 @@
 #pragma once
 #include "../Interfaces/IMenuItem/IMenuItem.h"
 #include "../Interfaces/ICommand/ICommand.h"
-#include "../User/User.h"
-#include <memory>
-#include <unordered_map>
 using namespace std;
 class Item : public IMenuItem
 {
-    protected:
-        unordered_map<string, shared_ptr<ICommand>> commands;
+private:
+    std::string name;
+    std::string description;
+    int price;
+    int quantity;
+    std::string size;
+    std::string itemID;
+  
 public:
-    void Display() override;
-    void ProcessCommand(std::string input, User user) override;
-    virtual void HandleCustomCommand(string input, User user) = 0;
-    virtual string GetContextualHelp() = 0;
+    Item(std::string name, std::string description, int price, int quantity, std::string size, std::string itemID)
+        : name(name), description(description), price(price),
+        quantity(quantity), size(size), itemID(itemID) {
+    }
+
+    std::string GetName() const override { return name; }
+    std::string GetDescription() const override { return description; }
+    int GetPrice() const override { return price; }
+    std::string GetItemID() const override { return itemID; }
+    int GetQuantity() const override { return quantity; }
+    std::string GetSize() const override { return size; }
+    void Display() const override;
 };

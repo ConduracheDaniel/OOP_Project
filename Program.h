@@ -1,12 +1,10 @@
 #pragma once
-#include "Enums/UserTypes/UserTypes.h"
 #include <string>
+#include "./Order/Order.h"
 class Program
 {
-private:
-	UserTypes StringToEnum(std::string input);
 
 public:
-	void Start();
+	void Start(Order order);
 };
 
