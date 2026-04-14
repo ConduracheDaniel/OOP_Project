@@ -1,7 +1,8 @@
 #pragma once
 #include <string>
 #include "../IMenuItem/IMenuItem.h"
-#include "../../Order/Order.h"
+
+class Order;
 
 class ICommand
 {

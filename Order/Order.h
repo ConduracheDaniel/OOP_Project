@@ -10,8 +10,9 @@ private:
 	vector<IMenuItem*> items;
     vector<ICommand*> commands;
 
+    IMenuItem* CreateItem(const string& name, int qty, const string& size);
 public:
-    void RegisterCommand(ICommand* cmd);
+    Order();
     void ProcessCommand(const string& input);
     void Display() const;
     bool IsCompleted() const { return isCompleted; }
@@ -20,5 +21,7 @@ public:
     void AddItem(IMenuItem* item) { items.push_back(item); }
     void RemoveItem(const string& name);
     const vector<IMenuItem*>& GetItems() const { return items; }
+
+    ~Order();
 };
 

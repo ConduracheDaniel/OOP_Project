@@ -123,7 +123,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Commands\AddCommand\AddCommand.cpp" />
+    <ClCompile Include="Commands\CompleteCommand\CompleteCommand.cpp" />
     <ClCompile Include="Commands\HelpCommand\HelpCommand.cpp" />
+    <ClCompile Include="Commands\ListCommand\ListCommand.cpp" />
+    <ClCompile Include="Commands\RemoveCommand\RemoveCommand.cpp" />
     <ClCompile Include="Interfaces\IMenuItem\IMenuItem.cpp" />
     <ClCompile Include="Interfaces\ICommand\ICommand.cpp" />
     <ClCompile Include="Item\Item.cpp" />
