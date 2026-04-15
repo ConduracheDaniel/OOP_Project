@@ -10,12 +10,15 @@ private:
     int price;
     int quantity;
     std::string size;
+
+    static int noOfItems;
   
 public:
     // Constructor de initializare
     Item(std::string name, std::string description, int price, int quantity, std::string size)
         : name(name), description(description), price(price),
         quantity(quantity), size(size){
+        noOfItems++;
     }
 
     // Constructor de copiere

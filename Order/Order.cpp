@@ -11,12 +11,16 @@
 #include "../Item/Coffee/Esptesso/Espresso.h"
 #include "../Item/Coffee/Latte/Latte.h"
 #include "../Item/Coffee/Americano/Americano.h"
+#include "../Item/Drinks/Water/SparklingWater.h"
+#include "../Item/Drinks/OrangeJuice/OrangeJuice.h"
 
 IMenuItem* Order::CreateItem(const string& name, int qty, const string& size) {
 	if (name == "capucino")  return new Capucino(qty, size);
 	if (name == "espresso")  return new Espresso(qty, size);
 	if (name == "latte")     return new Latte(qty, size);
 	if (name == "americano") return new Americano(qty, size);
+	if (name == "sparklingwater") return new SparklingWater(qty, size);
+	if (name == "orangejuice")return new OrangeJuice(qty, size);
 	return nullptr;
 }
 

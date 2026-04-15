@@ -3,7 +3,6 @@
 #include "./Order/Order.h"
 class Program
 {
-
 public:
 	void Start(Order order);
 };
