@@ -22,6 +22,10 @@ public:
     void RemoveItem(const string& name);
     const vector<IMenuItem*>& GetItems() const { return items; }
 
+    IMenuItem* FindItemInOrder(const string& name);
+
+    IMenuItem* FindItemInOrder(const string& name, const string& size);
+
     ~Order();
 };
 

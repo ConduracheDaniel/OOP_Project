@@ -7,7 +7,7 @@ protected:
 
 public:
     Coffee(std::string name, std::string description, int price,
-        int quantity, std::string size,
+        int quantity, Size size,
         std::string roast, bool hasMilk)
         : Item(name, description, price, quantity, size), hasMilk(hasMilk) {
     }

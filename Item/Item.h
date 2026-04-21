@@ -1,24 +1,23 @@
 #pragma once
 #include "../Interfaces/IMenuItem/IMenuItem.h"
 #include "../Interfaces/ICommand/ICommand.h"
+#include "../Enums/SizeEnum/SizeEnum.h"
 using namespace std;
 class Item : public IMenuItem
 {
 private:
     std::string name;
     std::string description;
-    int price;
+    double price;
     int quantity;
-    std::string size;
+    Size size;
 
-    static int noOfItems;
   
 public:
     // Constructor de initializare
-    Item(std::string name, std::string description, int price, int quantity, std::string size)
+    Item(std::string name, std::string description, double price, int quantity, Size size)
         : name(name), description(description), price(price),
         quantity(quantity), size(size){
-        noOfItems++;
     }
 
     // Constructor de copiere
@@ -32,9 +31,17 @@ public:
     // Getters
     std::string GetName() const override { return name; }
     std::string GetDescription() const override { return description; }
-    int GetPrice() const override { return price; }
+    double GetPrice() const override { return price; }
     int GetQuantity() const override { return quantity; }
-    std::string GetSize() const override { return size; }
+    std::string GetSize() const override { 
+        switch (size) {
+            case Size::SMALL: return "small";
+            case Size::MEDIUM: return "medium";
+            case Size::LARGE: return "large";
+            default: return "unknown";
+        }
+    
+    }
     void Display() const override;
 
     // operator+ ca functie membra (combina cantitati)
@@ -46,4 +53,6 @@ public:
 
     // operator== ca functie non-membra
     friend bool operator==(const Item& a, const Item& b);
+
+    void SetPrice(int newPrice);
 };

@@ -1,6 +1,6 @@
 #include "Program.h"
 #include <iostream>
-#include "String functions/Strings.cpp"
+#include "StringFunctions/Strings.h" 
 
 using namespace std;
 

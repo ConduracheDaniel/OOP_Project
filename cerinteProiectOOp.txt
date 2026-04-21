@@ -21,8 +21,8 @@ In derivate:
 	Se vor suprascrie constructorii de copiere si operatorul = (pt atribuiri corecte)✅
 Folosirea lui const cat mai mult cu putinta.✅
 Minim o functie si un atribut static (Atentie nu doar un getter sau setter)
-Doua exceptiii proprii tratate prin blocuri try catch.
+Doua exceptiii proprii tratate prin blocuri try catch.✅
 O clasa abstracta✅
-Folosirea unui enum
+Folosirea unui enum✅
 Upcast si un exemplu de downcast
 Utilizarea a 2 structuri de date diferite din std (vector, list, stack)

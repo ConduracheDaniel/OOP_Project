@@ -7,7 +7,7 @@ protected:
 public:
 
 	Drink(std::string name, std::string description, int price,
-		int quantity, std::string size, bool isCarbonated)
+		int quantity, Size size, bool isCarbonated)
 		: Item(name, description, price, quantity, size), _isCarbonated(isCarbonated) {
 	}
 

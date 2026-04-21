@@ -2,7 +2,7 @@
 
 class OrangeJuice : public Drink {
 public:
-	OrangeJuice(int quantity, std::string size)
+	OrangeJuice(int quantity, Size size)
 		: Drink("orangeJuice", "Suc de portocale natural", 12, quantity, size, false) {
 	}
 

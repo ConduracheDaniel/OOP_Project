@@ -2,8 +2,8 @@
 
 class SparklingWater : public Drink {
 public:
-	SparklingWater(int quantity, std::string size)
-		: Drink("Apa carbogazoasa", "Apa cu bule", 4, quantity, size, true) {
+	SparklingWater(int quantity, Size size)
+		: Drink("apaCarbogazoasa", "Apa cu bule", 4, quantity, size, true) {
 	}
 
 	// Constructor de copiere

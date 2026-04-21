@@ -1,11 +1,17 @@
 #include "Order.h"
 #include <sstream>
+#include "../StringFunctions/Strings.h"
+
+#include "../Enums/SizeEnum/SizeEnum.h"
+#include "../Exceptions/SizeExeption/SizeException.h"
+#include "../Exceptions/ItemNameException/ItemNameException.h"
 
 #include "../Commands/AddCommand/AddCommand.h"
 #include "../Commands/RemoveCommand/RemoveCommand.h"
 #include "../Commands/ListCommand/ListCommand.h"
 #include "../Commands/HelpCommand/HelpCommand.h"
 #include "../Commands/CompleteCommand/CompleteCommand.h"
+#include "../Commands/DiscountCommand/DiscountCommand.h"
 
 #include "../Item/Coffee/Capucino/Capucino.h"
 #include "../Item/Coffee/Esptesso/Espresso.h"
@@ -13,14 +19,46 @@
 #include "../Item/Coffee/Americano/Americano.h"
 #include "../Item/Drinks/Water/SparklingWater.h"
 #include "../Item/Drinks/OrangeJuice/OrangeJuice.h"
+#include "../Enums/SizeEnum/ParseSize.cpp"
 
-IMenuItem* Order::CreateItem(const string& name, int qty, const string& size) {
-	if (name == "capucino")  return new Capucino(qty, size);
-	if (name == "espresso")  return new Espresso(qty, size);
-	if (name == "latte")     return new Latte(qty, size);
-	if (name == "americano") return new Americano(qty, size);
-	if (name == "sparklingwater") return new SparklingWater(qty, size);
-	if (name == "orangejuice")return new OrangeJuice(qty, size);
+
+IMenuItem* Order::CreateItem(const string& name, int qty, const string& inputSize) {
+
+	Size size;
+	try {
+		size = ParseSize(inputSize);
+	}
+	catch (const SizeException& e) {
+		cout << e.what() << "\n";
+		return nullptr;
+	}
+	catch (const std::invalid_argument& e) {
+		cout << "Argument invalid: " << e.what() << "\n";
+		return nullptr;
+	}
+	catch (const std::exception& e) {
+		cout << "Eroare: " << e.what() << "\n";
+		return nullptr;
+	}
+
+	try {
+		name;
+	}
+	catch (const ItemNameException& e ) {
+		cout << e.what() << "\n";
+		return nullptr;
+	}
+	catch (const std::exception& e) {
+		cout << "Eroare: " << e.what() << "\n";
+		return nullptr;
+	}
+
+	if (name == "capucino")			return new Capucino(qty, size);
+	if (name == "espresso")			return new Espresso(qty, size);
+	if (name == "latte")			return new Latte(qty, size);
+	if (name == "americano")		return new Americano(qty, size);
+	if (name == "sparklingwater")	return new SparklingWater(qty, size);
+	if (name == "orangejuice")		return new OrangeJuice(qty, size);
 	return nullptr;
 }
 
@@ -30,6 +68,8 @@ Order::Order() {
 	commands.push_back(new ListCommand());
 	commands.push_back(new CompleteCommand());
 	commands.push_back(new HelpCommand(commands));
+	commands.push_back(new DiscountCommand());
+	
 }
 
 void Order::ProcessCommand(const string& input) {
@@ -68,10 +108,16 @@ void Order::ProcessCommand(const string& input) {
 		item = CreateItem(itemName, qty, size);
 
 		if (!item) {
-			cout << "Produs necunoscut: " << itemName << "\n";
-			return;
+			return; 
 		}
 	}
+	else if (tokens.size() >= 3) {
+		item = FindItemInOrder(tokens[1], tokens[2]); // pentru verificarea in lista a produsului bazat doar pe nume
+	}
+	else if (tokens.size() == 2) {
+		item = FindItemInOrder(tokens[1]); // pentru verivicarea produsului in lista bazat pe nume si marime
+	}
+
 	matched->Execute(item, *this);
 }
 
@@ -82,7 +128,7 @@ void Order::Display() const {
 	}
 
 	cout << "\n === Comanda ta === \n";
-	int total = 0;
+	double total = 0;
 
 	for (IMenuItem* item : items) {
 		item->Display();
@@ -100,8 +146,27 @@ void Order::RemoveItem(const string& name) {
 			cout << "Ai eliminat '" << name << "' din comanda\n";
 			return;
 		}
-		cout << "Produsul '" << name << "' nu a fost gasit in comanda.\n";
+		
 	}
+	cout << "Produsul '" << name << "' nu a fost gasit in comanda.\n";
+}
+
+IMenuItem* Order::FindItemInOrder(const string& name)
+{
+	for (auto& item : items) {
+		if (toLower(item->GetName()) == toLower(name))
+			return item;
+	}
+	return nullptr;
+}
+
+IMenuItem* Order::FindItemInOrder(const string& name, const string& size)
+{
+	for (auto& item : items) {
+		if (toLower(item->GetName()) == toLower(name) && item->GetSize() == size)
+			return item;
+	}
+	return nullptr;
 }
 
 Order::~Order()

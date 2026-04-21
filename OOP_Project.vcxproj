@@ -125,6 +125,7 @@
   <ItemGroup>
     <ClCompile Include="Commands\AddCommand\AddCommand.cpp" />
     <ClCompile Include="Commands\CompleteCommand\CompleteCommand.cpp" />
+    <ClCompile Include="Commands\DiscountCommand\DiscountCommand.cpp" />
     <ClCompile Include="Commands\HelpCommand\HelpCommand.cpp" />
     <ClCompile Include="Commands\ListCommand\ListCommand.cpp" />
     <ClCompile Include="Commands\RemoveCommand\RemoveCommand.cpp" />
@@ -134,15 +135,17 @@
     <ClCompile Include="Order\Order.cpp" />
     <ClCompile Include="Program.cpp" />
     <ClCompile Include="Source.cpp" />
-    <ClCompile Include="String functions\Strings.cpp" />
+    <ClCompile Include="StringFunctions\Strings.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Commands\DiscountCommand\DiscountCommand.h" />
     <ClInclude Include="Commands\HelpCommand\HelpCommand.h" />
     <ClInclude Include="Interfaces\IMenuItem\IMenuItem.h" />
     <ClInclude Include="Interfaces\ICommand\ICommand.h" />
     <ClInclude Include="Item\Item.h" />
     <ClInclude Include="Order\Order.h" />
     <ClInclude Include="Program.h" />
+    <ClInclude Include="StringFunctions\Strings.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

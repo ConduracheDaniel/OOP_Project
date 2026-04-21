@@ -3,8 +3,8 @@
 
 class Espresso : public Coffee {
 public:
-    Espresso(int quantity, std::string size)
-        : Coffee("Espresso", "Cafea neagra concentrata",
+    Espresso(int quantity, Size size)
+        : Coffee("espresso", "Cafea neagra concentrata",
             10, quantity, size, "dark", false) {
     }
 
