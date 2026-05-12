@@ -1,6 +1,6 @@
 #pragma once
 #include "../../Interfaces/ICommand/ICommand.h"
-
+#include <vector>
 
 class BaseCommand : public ICommand {
 protected:
@@ -14,5 +14,5 @@ public:
     std::string GetName() const override { return name; }
     std::string GetDescription() const override { return description; }
 
-    virtual void Execute(IMenuItem* item, Order& order) = 0;
+    virtual void Execute(const std::vector<std::string>& tokens, Order& order) = 0;
 };

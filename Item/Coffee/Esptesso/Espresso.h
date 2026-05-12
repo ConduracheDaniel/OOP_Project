@@ -10,4 +10,3 @@ public:
     }
 
 };
-const string Espresso::ClassName = "espresso";

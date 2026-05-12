@@ -1,3 +1,4 @@
+#pragma once
 #include "../../Drinks/Drinks.h"
 
 class SparklingWater : public Drink {
@@ -17,4 +18,3 @@ public:
 		return *this;
 	}
 };
-const string SparklingWater::ClassName = "sparklingWater";

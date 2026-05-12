@@ -8,6 +8,6 @@ private:
     const std::vector<ICommand*>& commands;
 public:
     HelpCommand(const std::vector<ICommand*>& commands) : BaseCommand("help","Afiseaza toate comenzile disponibile"), commands(commands) {}
-    void Execute(IMenuItem* item ,Order& order) override;
+    void Execute(const vector<string>& tokens,Order& order) override;
 
 };

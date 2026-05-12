@@ -1,7 +1,7 @@
 #include "HelpCommand.h"
 #include <iostream>
 
-void HelpCommand::Execute(IMenuItem* item, Order& order) {
+void HelpCommand::Execute(const vector<string>& tokens, Order& order) {
     std::cout << "\n ==== Comenzi disponibile ====\n";
     for (ICommand* cmd : commands) {
         cout << "  " << cmd->GetName()

@@ -1,8 +1,8 @@
 #pragma once
 #include "../BaseCommand/BaseCommand.h"
 #include <vector>
-class DiscountCommand : public BaseCommand {
+class MenuCommand : public BaseCommand {
 public:
-    DiscountCommand() : BaseCommand("discount", "Pune un discount la un produs") {}
+    MenuCommand() : BaseCommand("menu", "Afiseaza produsele disponibile") {}
     void Execute(const std::vector<std::string>& tokens, Order& order) override;
 };

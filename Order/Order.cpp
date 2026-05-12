@@ -12,6 +12,8 @@
 #include "../Commands/HelpCommand/HelpCommand.h"
 #include "../Commands/CompleteCommand/CompleteCommand.h"
 #include "../Commands/DiscountCommand/DiscountCommand.h"
+#include "../Commands/MenuCommand/MenuCommand.h"
+#include "../Commands/HistoryCommand/HistoryCommand.h"
 
 #include "../Item/Coffee/Capucino/Capucino.h"
 #include "../Item/Coffee/Esptesso/Espresso.h"
@@ -21,9 +23,12 @@
 #include "../Item/Drinks/OrangeJuice/OrangeJuice.h"
 #include "../Enums/SizeEnum/ParseSize.cpp"
 
+#include "../Menu/Menu.h"
+
+
 IMenuItem* Order::CreateItem(const string& name, int qty, const string& inputSize) {
 
-	if (availableItems.find(name) == availableItems.end()) {
+	if (!Menu::GetInstance()->Contains(name)) {
 		throw ItemNameException(name);
 	}
 
@@ -44,8 +49,8 @@ IMenuItem* Order::CreateItem(const string& name, int qty, const string& inputSiz
 		return nullptr;
 	}
 
-	if (name == Capucino::ClassName)			return new Capucino(qty, size);
-	if (name == Espresso::ClassName)			return new Espresso(qty, size);
+	if (name == Capucino::ClassName)		return new Capucino(qty, size);
+	if (name == Espresso::ClassName)		return new Espresso(qty, size);
 	if (name == Latte::ClassName)			return new Latte(qty, size);
 	if (name == Americano::ClassName)		return new Americano(qty, size);
 	if (name == SparklingWater::ClassName)	return new SparklingWater(qty, size);
@@ -53,20 +58,13 @@ IMenuItem* Order::CreateItem(const string& name, int qty, const string& inputSiz
 	return nullptr;
 }
 
-void Order::RegisterItems()
-{
-	availableItems.insert(Capucino::ClassName);
-	availableItems.insert(Espresso::ClassName);
-	availableItems.insert(Latte::ClassName);
-	availableItems.insert(Americano::ClassName);
-	availableItems.insert(SparklingWater::ClassName);
-	availableItems.insert(OrangeJuice::ClassName);
-}
 
 Order::Order() {
 	commands.push_back(new AddCommand());
 	commands.push_back(new RemoveCommand());
 	commands.push_back(new ListCommand());
+	commands.push_back(new MenuCommand());
+	commands.push_back(new HistoryCommand());
 	commands.push_back(new CompleteCommand());
 	commands.push_back(new HelpCommand(commands));
 	commands.push_back(new DiscountCommand());
@@ -74,18 +72,16 @@ Order::Order() {
 }
 
 void Order::ProcessCommand(const string& input) {
-
 	vector<string> tokens;
 	stringstream ss(input);
 	string token;
-
 	while (ss >> token)
 		tokens.push_back(token);
 
 	if (tokens.empty()) return;
 
-	string commandName = tokens[0];
 
+	string commandName = tokens[0];
 	ICommand* matched = nullptr;
 	for (ICommand* cmd : commands) {
 		if (cmd->GetName() == commandName) {
@@ -93,33 +89,13 @@ void Order::ProcessCommand(const string& input) {
 			break;
 		}
 	}
-
 	if (!matched) {
 		cout << "Comanda necunoscuta: " << commandName << "\n";
 		return;
 	}
 
-	IMenuItem* item = nullptr;
 
-	if (tokens.size() >= 4) {
-		string itemName = tokens[1];
-		int qty = stoi(tokens[2].substr(1));
-		string size = tokens[3];
-
-		item = CreateItem(itemName, qty, size);
-
-		if (!item) {
-			return; 
-		}
-	}
-	else if (tokens.size() >= 3) {
-		item = FindItemInOrder(tokens[1], tokens[2]); // pentru verificarea in lista a produsului bazat doar pe nume
-	}
-	else if (tokens.size() == 2) {
-		item = FindItemInOrder(tokens[1]); // pentru verivicarea produsului in lista bazat pe nume si marime
-	}
-
-	matched->Execute(item, *this);
+	matched->Execute(tokens, *this);
 }
 
 void Order::Display() const {
@@ -168,6 +144,13 @@ IMenuItem* Order::FindItemInOrder(const string& name, const string& size)
 			return item;
 	}
 	return nullptr;
+}
+
+void Order::Reset()
+{
+	commandHistory.Push(items);
+	items.clear();
+	isCompleted = false;
 }
 
 Order::~Order()

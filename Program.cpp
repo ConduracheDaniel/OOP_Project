@@ -7,12 +7,15 @@ using namespace std;
 void Program::Start(Order order)
 {
 	cout << "Ai pornit programul\n";
+	while (true) {
+		while (!order.IsCompleted()) {
+			string input;
+			cout << "Introdu comanda (sau 'help' pentru ajutor): ";
+			getline(cin, input);
+			order.ProcessCommand(toLower(input));
+		}
 
-	while (!order.IsCompleted()) {
-		string input;
-		cout << "Introdu comanda (sau 'help' pentru ajutor): ";
-		getline(cin, input);
-		order.ProcessCommand(toLower(input)); 
+		order.Reset();
 	}
-	order.Display();
 }
+	
