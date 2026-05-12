@@ -1,7 +1,9 @@
 #include "../Drinks.h"
 
+
 class OrangeJuice : public Drink {
 public:
+	static const string ClassName;
 	OrangeJuice(int quantity, Size size)
 		: Drink("orangeJuice", "Suc de portocale natural", 12, quantity, size, false) {
 	}
@@ -16,3 +18,4 @@ public:
 		return *this;
 	}
 };
+const string OrangeJuice::ClassName = "orangeJuice";

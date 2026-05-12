@@ -2,8 +2,9 @@
 
 class SparklingWater : public Drink {
 public:
+	static const string ClassName;
 	SparklingWater(int quantity, Size size)
-		: Drink("apaCarbogazoasa", "Apa cu bule", 4, quantity, size, true) {
+		: Drink(ClassName, "Apa cu bule", 4, quantity, size, true) {
 	}
 
 	// Constructor de copiere
@@ -16,3 +17,4 @@ public:
 		return *this;
 	}
 };
+const string SparklingWater::ClassName = "sparklingWater";

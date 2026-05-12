@@ -21,8 +21,11 @@
 #include "../Item/Drinks/OrangeJuice/OrangeJuice.h"
 #include "../Enums/SizeEnum/ParseSize.cpp"
 
-
 IMenuItem* Order::CreateItem(const string& name, int qty, const string& inputSize) {
+
+	if (availableItems.find(name) == availableItems.end()) {
+		throw ItemNameException(name);
+	}
 
 	Size size;
 	try {
@@ -41,25 +44,23 @@ IMenuItem* Order::CreateItem(const string& name, int qty, const string& inputSiz
 		return nullptr;
 	}
 
-	try {
-		name;
-	}
-	catch (const ItemNameException& e ) {
-		cout << e.what() << "\n";
-		return nullptr;
-	}
-	catch (const std::exception& e) {
-		cout << "Eroare: " << e.what() << "\n";
-		return nullptr;
-	}
-
-	if (name == "capucino")			return new Capucino(qty, size);
-	if (name == "espresso")			return new Espresso(qty, size);
-	if (name == "latte")			return new Latte(qty, size);
-	if (name == "americano")		return new Americano(qty, size);
-	if (name == "sparklingwater")	return new SparklingWater(qty, size);
-	if (name == "orangejuice")		return new OrangeJuice(qty, size);
+	if (name == Capucino::ClassName)			return new Capucino(qty, size);
+	if (name == Espresso::ClassName)			return new Espresso(qty, size);
+	if (name == Latte::ClassName)			return new Latte(qty, size);
+	if (name == Americano::ClassName)		return new Americano(qty, size);
+	if (name == SparklingWater::ClassName)	return new SparklingWater(qty, size);
+	if (name == OrangeJuice::ClassName)		return new OrangeJuice(qty, size);
 	return nullptr;
+}
+
+void Order::RegisterItems()
+{
+	availableItems.insert(Capucino::ClassName);
+	availableItems.insert(Espresso::ClassName);
+	availableItems.insert(Latte::ClassName);
+	availableItems.insert(Americano::ClassName);
+	availableItems.insert(SparklingWater::ClassName);
+	availableItems.insert(OrangeJuice::ClassName);
 }
 
 Order::Order() {

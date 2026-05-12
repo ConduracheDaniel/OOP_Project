@@ -2,10 +2,13 @@
 #include "../../Coffee/Coffee.h"
 
 class Capucino : public Coffee {
+    
 public:
+    static const string ClassName;
     Capucino(int quantity, Size size)
-        : Coffee("capucino", "Espresso cu spuma de lapte",
+        : Coffee(ClassName, "Espresso cu spuma de lapte",
             15, quantity, size, "medium", true) {
     }
 
 };
+const string Capucino::ClassName = "capucino";

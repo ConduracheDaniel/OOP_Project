@@ -24,5 +24,11 @@ Minim o functie si un atribut static (Atentie nu doar un getter sau setter)
 Doua exceptiii proprii tratate prin blocuri try catch.✅
 O clasa abstracta✅
 Folosirea unui enum✅
-Upcast si un exemplu de downcast
-Utilizarea a 2 structuri de date diferite din std (vector, list, stack)
+Upcast si un exemplu de downcast✅
+Utilizarea a 2 structuri de date diferite din std (vector, list, stack)✅
+
+O clasa singleton
+O clasa Template
+Folosirea dynamic_cast/typeid ✅
+Nu uitati de functiile virtuale! ✅
+

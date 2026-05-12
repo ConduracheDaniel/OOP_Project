@@ -3,9 +3,11 @@
 
 class Espresso : public Coffee {
 public:
+    static const string ClassName;
     Espresso(int quantity, Size size)
-        : Coffee("espresso", "Cafea neagra concentrata",
+        : Coffee(ClassName, "Cafea neagra concentrata",
             10, quantity, size, "dark", false) {
     }
 
 };
+const string Espresso::ClassName = "espresso";
